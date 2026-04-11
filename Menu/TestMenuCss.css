@@ -1,0 +1,287 @@
+:root {
+    --bg-color: #f8f8f8;
+    --card-bg: #ffffff;
+    --primary-blue: #5d5fef;
+    --text-main: #333;
+    --text-muted: #b0b0b0;
+    --radius: 20px;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #e0e0e0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.app-container {
+    background: rgba(248, 248, 248, 0.75);
+    width: 75%;
+    min-height: 75vh;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    box-sizing: border-box;
+    margin-top: 100px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+/* Category Tabs */
+.category-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.tab {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    background: #fff;
+    color: var(--text-muted);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.tab:hover {
+    background: var(--primary-blue);
+    color: #fff;
+    cursor: pointer;
+}
+
+.tab.active {
+    background: #8b6f47;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Grid Layout */
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Section Headers */
+.menu-section {
+    margin-top: 30px;
+}
+
+.menu-section:first-child {
+    margin-top: 0;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #8b6f47;
+    display: inline-block;
+}
+
+/* Card Styling */
+.menu-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Badges & Buttons inside images */
+.badge {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(186, 178, 255, 0.9);
+    color: #fff;
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 5px;
+}
+
+.add-btn, .nav-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(93, 95, 239, 0.3);
+    transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(93, 95, 239, 0.5);
+}
+
+/* Card Text */
+.card-info {
+    margin-top: 15px;
+    padding: 0 5px;
+}
+
+.price-label {
+    font-size: 12px;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 2px 0;
+}
+
+.title {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.4;
+    margin: 8px 0;
+    font-weight: normal;
+    height: 36px; /* Keeps grid aligned */
+    overflow: hidden;
+}
+
+.weight {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+/* Portion Selector Buttons */
+.portion-buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.portion-btn {
+    flex: 1;
+    padding: 8px 12px;
+    background: #f0f0f0;
+    color: var(--text-main);
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.portion-btn:hover {
+    background: var(--primary-blue);
+    color: white;
+    border-color: var(--primary-blue);
+}
+
+.portion-btn.active {
+    background: var(--primary-blue);
+    color: white;
+    border-color: var(--primary-blue);
+}
+
+/* Out of Stock look */
+.menu-card.out-of-stock { opacity: 0.6; }
+.menu-card.out-of-stock .add-btn {
+    background: #9ca3af;
+    cursor: not-allowed;
+    box-shadow: none;
+    pointer-events: none;
+}
+.menu-card.out-of-stock .add-btn:hover { transform: none; box-shadow: none; }
+
+/* Floating Action Button */
+.fab {
+    position: fixed;
+    bottom: 30px;
+    right: calc(50% - 160px); /* Centers relative to mobile container */
+    background: var(--primary-blue);
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(93, 95, 239, 0.4);
+}
+
+/* Stock Status Badges */
+.stock-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.stock-badge.in-stock {
+    background: #4caf50;
+    color: white;
+}
+
+.stock-badge.out-of-stock {
+    background: #f44336;
+    color: white;
+}
+
+.status-label {
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+    font-weight: 600;
+}
+
+.status-label.in-stock {
+    background: #4caf50;
+    color: white;
+}
+
+.status-label.out-of-stock {
+    background: #f44336;
+    color: white;
+}
+
+/* OOS error banner on menu pages */
+.oos-error {
+    background: #fee2e2;
+    border: 1px solid #f44336;
+    color: #b91c1c;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-bottom: 16px;
+}
