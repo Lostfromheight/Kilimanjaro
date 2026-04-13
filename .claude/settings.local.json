@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl --version)",
+      "Bash(git config:*)",
+      "Bash(chmod +x \"c:/xampp/htdocs/Cafe/Cafe/.git/hooks/post-commit\")"
+    ]
+  }
+}

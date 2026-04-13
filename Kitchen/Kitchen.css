@@ -64,7 +64,7 @@ body {
     border-color: #8b6f47;
 }
 
-/* BLURRED BACKGROUND — Menu Management and Feedback pages */
+/* Menu Management and Feedback pages */
 body.bg-blur {
     background-image: none;
     position: relative;
