@@ -58,12 +58,7 @@ $my_orders = mysqli_query($conn, "
             background: white; border-radius: 12px;
             padding: 20px; margin-bottom: 16px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            border-left: 5px solid #e2e8f0;
         }
-        .order-card.paid        { border-left-color: #0ea5e9; }
-        .order-card.preparing   { border-left-color: #3b82f6; }
-        .order-card.ready       { border-left-color: #22c55e; }
-        .order-card.picked-up   { border-left-color: #94a3b8; }
         .order-header {
             display: flex; justify-content: space-between;
             align-items: center; margin-bottom: 12px;
@@ -103,7 +98,6 @@ $my_orders = mysqli_query($conn, "
             font-size: 13px; margin-bottom: 20px;
         }
         .btn-back:hover { background: #6d5535; }
-        .order-card.cancelled   { border-left-color: #ef4444; }
         .status-cancelled       { background: #fee2e2; color: #991b1b; }
         .cancelled-notice {
             margin-top: 14px; padding: 8px 12px; background: #fee2e2;

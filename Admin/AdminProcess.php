@@ -1,6 +1,4 @@
 <?php
-// session_start() is handled by AdminUsers.php — do not call it here
-
 if(!isset($_SESSION['role']) || $_SESSION['role'] != "AD"){
     header('location:../Auth/Login.php?error=no_access');
     exit();
